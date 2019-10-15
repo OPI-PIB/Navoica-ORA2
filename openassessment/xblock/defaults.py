@@ -3,58 +3,56 @@
 # pylint: disable=line-too-long
 
 DEFAULT_PROMPT = """
-    Censorship in the Libraries
+    Cenzura w bibliotekach
 
-    'All of us can think of a book that we hope none of our children or any other children have taken off the shelf. But if I have the right to remove that book from the shelf -- that work I abhor -- then you also have exactly the same right and so does everyone else. And then we have no books left on the shelf for any of us.' --Katherine Paterson, Author
+    'Każdy z nas może pomyśleć o książce, która nie powinna wpaść w ręce żadnemu dziecku. Jednak jeśli ja mam prawo usunąć książkę, której nie lubię, z bibliotecznej półki, to takie samo prawo mają pozostali. W rezultacie znikną wszystkie książki.' --Katherine Paterson, autor
 
-    Write a persuasive essay to a newspaper reflecting your views on censorship in libraries. Do you believe that certain materials, such as books, music, movies, magazines, etc., should be removed from the shelves if they are found offensive? Support your position with convincing arguments from your own experience, observations, and/or reading.
-
-    Read for conciseness, clarity of thought, and form.
+    Napisz przekonujący esej do gazety, w którym zawrzesz swoje poglądy na temat cenzury. Czy uważasz, że twórczość, która została uznana za szkodliwą (książki, dzieła muzyczne, filmy, czasopisma itp.) powinna zostać zakazana? Uargumentuj swoją opinię, przytocz przykłady ze swojego doświadczenia i obserwacji.
 """
 
 DEFAULT_RUBRIC_CRITERIA = [
     {
         'name': "Ideas",
-        'label': "Ideas",
-        'prompt': "Determine if there is a unifying theme or main idea.",
+        'label': "Idee",
+        'prompt': "Czy w odpowiedzi zawarta została jakaś myśl przewodnia (idea)?",
         'order_num': 0,
         'feedback': 'optional',
         'options': [
             {
-                'order_num': 0, 'points': 0, 'name': 'Poor', 'label': 'Poor',
-                'explanation': """Difficult for the reader to discern the main idea.  Too brief or too repetitive to establish or maintain a focus."""
+                'order_num': 0, 'points': 0, 'name': 'Poor', 'label': 'Niedostatecznie',
+                'explanation': """Uchwycenie myśli przewodniej jest problematyczne. Jest ona zbyt uboga/banalna."""
             },
             {
-                'order_num': 1, 'points': 3, 'name': 'Fair', 'label': 'Fair',
-                'explanation': """Presents a unifying theme or main idea, but may include minor tangents.  Stays somewhat focused on topic and task."""
+                'order_num': 1, 'points': 3, 'name': 'Fair', 'label': 'Dostatecznie',
+                'explanation': """Myśl przewodnia została zawarta w odpowiedzi, ale się nie wyróżnia."""
             },
             {
-                'order_num': 2, 'points': 5, 'name': 'Good', 'label': 'Good',
-                'explanation': """Presents a unifying theme or main idea without going off on tangents.  Stays completely focused on topic and task."""
+                'order_num': 2, 'points': 5, 'name': 'Good', 'label': 'Dobrze',
+                'explanation': """Myśl przewodnia została zawarta w odpowiedzi i się wyróżnia."""
             },
         ],
     },
     {
         'name': "Content",
-        'label': "Content",
-        'prompt': "Assess the content of the submission",
+        'label': "Treść",
+        'prompt': "Oceń treść przesłanej odpowiedzi.",
         'order_num': 1,
         'options': [
             {
-                'order_num': 0, 'points': 0, 'name': 'Poor', 'label': 'Poor',
-                'explanation': """Includes little information with few or no details or unrelated details.  Unsuccessful in attempts to explore any facets of the topic."""
+                'order_num': 0, 'points': 0, 'name': 'Poor', 'label': 'Niedostatecznie',
+                'explanation': """Zawiera niewiele istotnych informacji, treść pozbawiona szczegółów, zbyt ogólna. Nieudana próba podejścia do tematu."""
             },
             {
-                'order_num': 1, 'points': 1, 'name': 'Fair', 'label': 'Fair',
-                'explanation': """Includes little information and few or no details.  Explores only one or two facets of the topic."""
+                'order_num': 1, 'points': 1, 'name': 'Fair', 'label': 'Dostatecznie',
+                'explanation': """Zawiera niewiele istotnych informacji i niewiele szczegółów. Został poruszony jeden/dwa aspekty tematu."""
             },
             {
-                'order_num': 2, 'points': 3, 'name': 'Good', 'label': 'Good',
-                'explanation': """Includes sufficient information and supporting details. (Details may not be fully developed; ideas may be listed.)  Explores some facets of the topic."""
+                'order_num': 2, 'points': 3, 'name': 'Good', 'label': 'Dobrze',
+                'explanation': """Zawiera wyczerpujące informacje i istotne szczegóły. Niektóre aspekty tematu zostały poruszone."""
             },
             {
-                'order_num': 3, 'points': 3, 'name': 'Excellent', 'label': 'Excellent',
-                'explanation': """Includes in-depth information and exceptional supporting details that are fully developed.  Explores all facets of the topic."""
+                'order_num': 3, 'points': 3, 'name': 'Excellent', 'label': 'Bardzo dobrze',
+                'explanation': """Zawiera wyczerpujące informacje i istotne szczegóły. Wszystkie aspekty tematu zostały poruszone."""
             },
         ],
     },
@@ -63,25 +61,24 @@ DEFAULT_RUBRIC_CRITERIA = [
 # The rubric's feedback prompt is a set of instructions letting the student
 # know they can provide additional free form feedback in their assessment.
 DEFAULT_RUBRIC_FEEDBACK_PROMPT = """
-(Optional) What aspects of this response stood out to you? What did it do well? How could it be improved?
+(Opcjonalnie) Co wyróżnia tę odpowiedź? Co zostało zrobione dobrze? Co można poprawić?
 """
 
 # The rubric's feedback text is the default text displayed and used as
 # the student's response to the feedback prompt
 DEFAULT_RUBRIC_FEEDBACK_TEXT = """
-I think that this response...
+Myślę, że ta odpowiedź jest...
 """
 
 DEFAULT_EXAMPLE_ANSWER = (
-    "Replace this text with your own sample response for this assignment. "
-    "Then, under Response Score to the right, select an option for each criterion. "
-    "Learners practice performing peer assessments by assessing this response and comparing "
-    "the options that they select in the rubric with the options that you specified."
+    "Zastąp ten tekst własną przykładową odpowiedzią na to zadanie. "
+    "Następnie po prawej stronie w Ocena odpowiedzi wybierz opcję do każdego kryterium. "
+    "Studenci uczą się wzajemnego oceniania swoich prac. "
 )
 
 DEFAULT_EXAMPLE_ANSWER_2 = (
-    "Replace this text with another sample response, "
-    "and then specify the options that you would select for this response."
+    "Zastąp ten tekst własną przykładową  "
+    "odpowiedzią na to zadanie. Następnie wybierz opcje."
 )
 
 DEFAULT_STUDENT_TRAINING = {
