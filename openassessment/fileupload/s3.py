@@ -37,9 +37,6 @@ def s3_storage(request, key):
 
     file.seek(0)
 
-    if size == sent
+    if size == sent:
         return HttpResponse()
-    else
-        return False
-
-
+    return False
