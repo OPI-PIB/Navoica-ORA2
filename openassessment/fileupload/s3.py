@@ -18,6 +18,7 @@ def s3_storage(request, key):
     """
     Upload files using s3 set_contents_from_file.
     """
+    os.environ['S3_USE_SIGV4'] = 'True'
     conn = _connect_to_s3()
     conn.auth_region_name = 'eu-frankfurt-1'
     content, metadata = get_content_metadata(request)

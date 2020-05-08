@@ -494,13 +494,13 @@ if (typeof OpenAssessment.Server === "undefined" || !OpenAssessment.Server) {
          * specified service used for uploading files on success, or with an error message
          * upon failure.
          */
-        getUploadUrl: function(contentType, filename, filenum) {
+        getUploadUrl: function(contentType, filename, filenum, file) {
             var url = this.url('upload_url');
             return $.Deferred(function(defer) {
                 $.ajax({
                     type: "POST",
                     url: url,
-                    data: JSON.stringify({contentType: contentType, filename: filename, filenum: filenum}),
+                    data: JSON.stringify({contentType: contentType, filename: filename, filenum: filenum, file:file}),
                     contentType: jsonContentType
                 }).done(function(data) {
                     if (data.success) { defer.resolve(data.url); }
