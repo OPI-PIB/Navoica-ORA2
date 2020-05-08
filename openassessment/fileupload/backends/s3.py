@@ -17,6 +17,7 @@ class Backend(BaseBackend):
     def get_upload_url(self, key, content_type, file):
         bucket_name, key_name = self._retrieve_parameters(key)
         try:
+            os.environ['S3_USE_SIGV4'] = 'True'
             conn = _connect_to_s3()
             conn.auth_region_name = 'eu-frankfurt-1'
             upload_url = conn.generate_url(
@@ -36,6 +37,7 @@ class Backend(BaseBackend):
     def get_download_url(self, key):
         bucket_name, key_name = self._retrieve_parameters(key)
         try:
+            os.environ['S3_USE_SIGV4'] = 'True'
             conn = _connect_to_s3()
             conn.auth_region_name = 'eu-frankfurt-1'
             bucket = conn.get_bucket(bucket_name)
@@ -49,6 +51,7 @@ class Backend(BaseBackend):
 
     def remove_file(self, key):
         bucket_name, key_name = self._retrieve_parameters(key)
+        os.environ['S3_USE_SIGV4'] = 'True'
         conn = _connect_to_s3()
         conn.auth_region_name = 'eu-frankfurt-1'
         bucket = conn.get_bucket(bucket_name)
