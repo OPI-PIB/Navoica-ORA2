@@ -510,8 +510,7 @@ if (typeof OpenAssessment.Server === "undefined" || !OpenAssessment.Server) {
                     url: url,
                     processData:false,
                     contentType: false,
-                    data: formData,
-                    contentType: jsonContentType
+                    data: formData
                 }).done(function(data) {
                     if (data.success) { defer.resolve(data.url); }
                     else { defer.rejectWith(this, [data.msg]); }
