@@ -20,14 +20,26 @@ class Backend(BaseBackend):
             os.environ['S3_USE_SIGV4'] = 'True'
             conn = _connect_to_s3()
             conn.auth_region_name = 'eu-frankfurt-1'
-            upload_url = conn.generate_url(
-                expires_in=self.UPLOAD_URL_TIMEOUT,
-                method='PUT',
-                bucket=bucket_name,
-                key=key_name,
-                headers={'Content-Length': '5242880', 'Content-Type': content_type}
-            )
-            return '/openassessment/fileupload/s3/upload'
+            #f = NamedTemporaryFile()
+            try:
+                size = os.fstat(file.fileno()).st_size
+            except:
+                file.seek(0, os.SEEK_END)
+                size = file.tell()
+            bucket = conn.get_bucket(bucket_name)
+            callback=None
+
+            k = Key(bucket)
+            k.key = filename
+
+            sent = k.set_contents_from_file(file, reduced_redundancy=False, rewind=True)
+
+            file.seek(0)
+
+            if size == sent:
+                return HttpResponse()
+            return False
+            #return '/openassessment/fileupload/s3/upload'
         except Exception as ex:
             logger.exception(
                 u"An internal exception occurred while generating an upload URL."
