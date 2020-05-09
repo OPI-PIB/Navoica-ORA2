@@ -288,7 +288,7 @@ class SubmissionMixin(object):
 
         return submission
 
-    @XBlock.json_handler
+    @XBlock.handler
     def upload_url(self, data, suffix=''):  # pylint: disable=unused-argument
         """
         Request a URL to be used for uploading content related to this
@@ -298,13 +298,14 @@ class SubmissionMixin(object):
             A URL to be used to upload content associated with this submission.
 
         """
+        file = data.POST['file']
+        data = json.loads(data.POST['objArr'])
         if 'contentType' not in data or 'filename' not in data:
             return {'success': False, 'msg': self._(u"There was an error uploading your file.")}
         content_type = data['contentType']
         file_name = data['filename']
         file_name_parts = file_name.split('.')
-        file_num = int(data.get('filenum', 0))
-        file = data['file']
+        file_num = int(data.get('filenum', 0))   
         file_ext = file_name_parts[-1] if len(file_name_parts) > 1 else None
 
         if self.file_upload_type == 'image' and content_type not in self.ALLOWED_IMAGE_MIME_TYPES:
