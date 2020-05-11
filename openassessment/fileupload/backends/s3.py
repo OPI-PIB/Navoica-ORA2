@@ -14,13 +14,12 @@ logger = logging.getLogger("openassessment.fileupload.api")
 
 class Backend(BaseBackend):
 
-    def get_upload_url(self, key, content_type, file):
+    def get_upload_url(self, key, content_type, file, file_name):
         bucket_name, key_name = self._retrieve_parameters(key)
         try:
             os.environ['S3_USE_SIGV4'] = 'True'
             conn = _connect_to_s3()
             conn.auth_region_name = 'eu-frankfurt-1'
-            filename = 'test.jpg'
             #f = NamedTemporaryFile()
             try:
                 size = os.fstat(file.fileno()).st_size
@@ -30,8 +29,8 @@ class Backend(BaseBackend):
             bucket = conn.get_bucket(bucket_name)
             callback=None
 
-            k = Key(bucket)
-            k.key = filename
+            k = boto.s3.key(bucket)
+            k.key = file_name
 
             sent = k.set_contents_from_file(file, reduced_redundancy=False, rewind=True)
 

@@ -322,7 +322,7 @@ class SubmissionMixin(object):
             return {'success': False, 'msg': self._(u"File type is not allowed.")}
         try:
             key = self._get_student_item_key(file_num)
-            url = file_upload_api.get_upload_url(key, content_type, file)
+            url = file_upload_api.get_upload_url(key, content_type, file, file_name)
             return {'success': True, 'url': url}
         except FileUploadError:
             logger.exception("FileUploadError:Error retrieving upload URL for the data:{data}.".format(data=data))
