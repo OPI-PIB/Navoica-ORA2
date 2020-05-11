@@ -15,7 +15,7 @@ logger = logging.getLogger("openassessment.fileupload.api")
 
 class Backend(BaseBackend):
 
-    def get_upload_url(self, key, content_type, file, file_name):
+    def get_upload_url(self, key, content_type, file):
         bucket_name, key_name = self._retrieve_parameters(key)
         try:
             os.environ['S3_USE_SIGV4'] = 'True'
@@ -30,7 +30,7 @@ class Backend(BaseBackend):
             callback=None
 
             k = Key(bucket)
-            k.key = file_name
+            k.key = key_name
 
             sent = k.set_contents_from_file(file, reduced_redundancy=False, rewind=True)
 
