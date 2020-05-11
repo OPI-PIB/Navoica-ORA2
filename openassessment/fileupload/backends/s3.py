@@ -5,6 +5,7 @@ import os
 from django.conf import settings
 
 import boto
+from boto.s3.key import Key
 
 from ..exceptions import FileUploadInternalError
 from .base import BaseBackend
@@ -29,7 +30,7 @@ class Backend(BaseBackend):
             bucket = conn.get_bucket(bucket_name)
             callback=None
 
-            k = boto.s3.key(bucket)
+            k = Key(bucket)
             k.key = file_name
 
             sent = k.set_contents_from_file(file, reduced_redundancy=False, rewind=True)
