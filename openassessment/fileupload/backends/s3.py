@@ -37,7 +37,7 @@ class Backend(BaseBackend):
             file.seek(0)
 
             if size == sent:
-                return HttpResponse()
+                return True
             return False
             #return '/openassessment/fileupload/s3/upload'
         except Exception as ex:
