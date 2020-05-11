@@ -298,7 +298,7 @@ class SubmissionMixin(object):
             A URL to be used to upload content associated with this submission.
 
         """
-        file = data.POST['file']
+        file = data.POST['file'].file
         data = json.loads(data.POST['objArr'])
         if 'contentType' not in data or 'filename' not in data:
             return {'success': False, 'msg': self._(u"There was an error uploading your file.")}

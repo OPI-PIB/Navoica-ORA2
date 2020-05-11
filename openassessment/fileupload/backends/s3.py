@@ -20,6 +20,7 @@ class Backend(BaseBackend):
             os.environ['S3_USE_SIGV4'] = 'True'
             conn = _connect_to_s3()
             conn.auth_region_name = 'eu-frankfurt-1'
+            filename = 'test.jpg'
             #f = NamedTemporaryFile()
             try:
                 size = os.fstat(file.fileno()).st_size

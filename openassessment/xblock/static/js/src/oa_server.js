@@ -502,7 +502,7 @@ if (typeof OpenAssessment.Server === "undefined" || !OpenAssessment.Server) {
             
             objArr.push(JSON.stringify({contentType: contentType, filename: filename, filenum: filenum}));
             formData.append('file', file);
-            formData.append('objArr', JSON.stringify( objArr ));
+            formData.append('objArr', objArr);
 
             return $.Deferred(function(defer) {
                 $.ajax({
