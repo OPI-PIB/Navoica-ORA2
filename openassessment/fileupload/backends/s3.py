@@ -1,10 +1,11 @@
 from __future__ import absolute_import
 
 import logging
-
+import os
 from django.conf import settings
 
 import boto
+from boto.s3.key import Key
 
 from ..exceptions import FileUploadInternalError
 from .base import BaseBackend
@@ -14,18 +15,30 @@ logger = logging.getLogger("openassessment.fileupload.api")
 
 class Backend(BaseBackend):
 
-    def get_upload_url(self, key, content_type):
+    def get_upload_url(self, key, content_type, file):
         bucket_name, key_name = self._retrieve_parameters(key)
         try:
+            os.environ['S3_USE_SIGV4'] = 'True'
             conn = _connect_to_s3()
-            upload_url = conn.generate_url(
-                expires_in=self.UPLOAD_URL_TIMEOUT,
-                method='PUT',
-                bucket=bucket_name,
-                key=key_name,
-                headers={'Content-Length': '5242880', 'Content-Type': content_type}
-            )
-            return upload_url
+            conn.auth_region_name = 'eu-frankfurt-1'
+            try:
+                size = os.fstat(file.fileno()).st_size
+            except:
+                file.seek(0, os.SEEK_END)
+                size = file.tell()
+            bucket = conn.get_bucket(bucket_name)
+            callback=None
+
+            k = Key(bucket)
+            k.key = key_name
+
+            sent = k.set_contents_from_file(file, reduced_redundancy=False, rewind=True)
+
+            file.seek(0)
+
+            if size == sent:
+                return True
+            return False
         except Exception as ex:
             logger.exception(
                 u"An internal exception occurred while generating an upload URL."
@@ -35,7 +48,9 @@ class Backend(BaseBackend):
     def get_download_url(self, key):
         bucket_name, key_name = self._retrieve_parameters(key)
         try:
+            os.environ['S3_USE_SIGV4'] = 'True'
             conn = _connect_to_s3()
+            conn.auth_region_name = 'eu-frankfurt-1'
             bucket = conn.get_bucket(bucket_name)
             s3_key = bucket.get_key(key_name)
             return s3_key.generate_url(expires_in=self.DOWNLOAD_URL_TIMEOUT) if s3_key else ""
@@ -47,7 +62,9 @@ class Backend(BaseBackend):
 
     def remove_file(self, key):
         bucket_name, key_name = self._retrieve_parameters(key)
+        os.environ['S3_USE_SIGV4'] = 'True'
         conn = _connect_to_s3()
+        conn.auth_region_name = 'eu-frankfurt-1'
         bucket = conn.get_bucket(bucket_name)
         s3_key = bucket.get_key(key_name)
         if s3_key:
@@ -71,5 +88,6 @@ def _connect_to_s3():
 
     return boto.connect_s3(
         aws_access_key_id=aws_access_key_id,
-        aws_secret_access_key=aws_secret_access_key
+        aws_secret_access_key=aws_secret_access_key,
+        host='opiopc.compat.objectstorage.eu-frankfurt-1.oraclecloud.com'
     )

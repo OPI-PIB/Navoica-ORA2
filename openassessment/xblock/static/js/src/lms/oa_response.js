@@ -801,21 +801,16 @@ OpenAssessment.ResponseView.prototype = {
         // completed, execute a sequential AJAX call to upload to the returned
         // URL. This request requires appropriate CORS configuration for AJAX
         // PUT requests on the server.
-        return view.server.getUploadUrl(filetype, filename, filenum).done(
-            function(url) {
-                view.fileUploader.upload(url, file)
-                    .done(function() {
-                        view.fileUrl(filenum);
-                        view.baseView.toggleActionError('upload', null);
-                        if (finalUpload) {
-                            sel.find('input[type=file]').val('');
-                            view.filesUploaded = true;
-                            view.checkSubmissionAbility(true);
-                        }
-                    })
-                    .fail(handleError);
-            }
-        ).fail(handleError);
+        return view.server.getUploadUrl(filetype, filename, filenum, file).done(function() {
+                view.fileUrl(filenum);
+                view.baseView.toggleActionError('upload', null);
+                if (finalUpload) {
+                    sel.find('input[type=file]').val('');
+                    view.filesUploaded = true;
+                    view.checkSubmissionAbility(true);
+                }
+            })
+            .fail(handleError);
     },
 
     /**

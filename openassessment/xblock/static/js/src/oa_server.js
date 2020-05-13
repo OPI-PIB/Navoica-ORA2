@@ -490,18 +490,27 @@ if (typeof OpenAssessment.Server === "undefined" || !OpenAssessment.Server) {
          * @param {string} contentType The Content Type for the file being uploaded.
          * @param {string} filename The name of the file to be uploaded.
          * @param {string} filenum The number of the file to be uploaded.
+         * @param {object} file File.
          * @returns {promise} A promise which resolves with a presigned upload URL from the
          * specified service used for uploading files on success, or with an error message
          * upon failure.
          */
-        getUploadUrl: function(contentType, filename, filenum) {
+        getUploadUrl: function(contentType, filename, filenum, file) {
+            var formData = new FormData();
             var url = this.url('upload_url');
+            var objArr = [];
+            
+            objArr.push(JSON.stringify({contentType: contentType, filename: filename, filenum: filenum}));
+            formData.append('file', file);
+            formData.append('objArr', objArr);
+
             return $.Deferred(function(defer) {
                 $.ajax({
                     type: "POST",
                     url: url,
-                    data: JSON.stringify({contentType: contentType, filename: filename, filenum: filenum}),
-                    contentType: jsonContentType
+                    processData:false,
+                    contentType: false,
+                    data: formData
                 }).done(function(data) {
                     if (data.success) { defer.resolve(data.url); }
                     else { defer.rejectWith(this, [data.msg]); }
