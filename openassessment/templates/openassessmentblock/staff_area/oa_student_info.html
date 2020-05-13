@@ -196,7 +196,7 @@
                         </div>
 
                         <ul class="list list--actions">
-                            <li>
+                            <li class="list--action__comments">
                                 <label class="label comments__label">{% trans "Comments:" %}
                                     <textarea class="cancel_submission_comments" value="" maxlength="10000"></textarea>
                                 </label>
@@ -205,7 +205,7 @@
                         <ul class="list list--actions">
                             <li class="list--actions__item">
                                 <button data-submission-uuid="{{ submission.uuid }}"
-                                    class="action--submit action--submit-cancel-submission" disabled>
+                                    class="action--submit action--submit-cancel-submission btn-sm" disabled>
                                     {% trans "Remove submission" %}
                                 </button>
 

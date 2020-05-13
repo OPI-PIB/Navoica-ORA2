@@ -86,7 +86,7 @@
 
   // STATE: is in-progress
   &.is--in-progress {
-    border-top-color: $action-primary-color;
+    border-top-color: $darkcyan;
   }
 
   // STATE: is complete
@@ -174,9 +174,9 @@
   .action--save {
     @extend %btn--secondary;
     @extend %action-2;
-    display: block;
-    margin-bottom: ($baseline-v/2);
-    min-width: 215px;
+  //  display: block;
+  //  margin-bottom: ($baseline-v/2);
+  //  min-width: 215px;
 
     @include media($bp-ds) {
       display: inline-block;

@@ -34,7 +34,7 @@
   // --------------------
   .list--actions {
     margin-bottom: ($baseline-v/2);
-    @include text-align(center);
+    @include text-align(right);
 
     @include media($bp-ds) {
       @include text-align(right);
@@ -52,6 +52,10 @@
       @include text-align(right);
     }
 
+    .list--action__comments {
+      @include text-align(left);
+    }
+
     // STATE: actions has an error
     &.has--error {
 
@@ -61,7 +65,7 @@
       }
     }
 
-    .action--submit {
+     .action--submit {
       @extend %btn--primary;
       @extend %action-2;
       @include margin-left($baseline-v/2);
@@ -403,7 +407,7 @@
       }
 
       .step__status__value {
-        background: $action-primary-color;
+        background: $darkcyan;
 
         .icon {
           display: inline-block;
@@ -493,10 +497,10 @@
       }
 
       &:not([disabled]) {
-        color: $action-primary-color;
+        color: $color-complete;
 
         &:hover, &:focus {
-          color: $action-primary-color-focus;
+          color: $color-complete;
         }
       }
 
@@ -577,7 +581,7 @@
     .response__submission {
       padding: ($baseline-v/2) ($baseline-h/4) $baseline-v ($baseline-h/4);
       background: $color-decorative-quaternary;
-      border-radius: ($baseline-v/10);
+    //  border-radius: ($baseline-v/10);
     }
 
     .response__submission__content {
@@ -1189,6 +1193,6 @@
   .action--submit {
     @extend %btn--secondary;
     @extend %action-2;
-    @include margin-right(($baseline-v/2));
+  //  @include margin-right(($baseline-v/2));
   }
 }

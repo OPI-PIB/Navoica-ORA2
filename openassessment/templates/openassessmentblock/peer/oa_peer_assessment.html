@@ -10,7 +10,7 @@
 {% endblock %}
 {% spaceless %}
 
-    <header class="step__header ui-slidable__control">
+    <header class="step__header ui-slidable__control mt-0">
         <span>
             {% block button %}
                 <button class="ui-slidable" aria-expanded="true" id="oa_peer_{{ xblock_id }}" aria-controls="oa_peer_{{ xblock_id }}_content" aria-labeledby="oa_step_title_peer">
@@ -20,7 +20,7 @@
         </span>
 
         <span>
-            <h4 class="step__title">
+            <h4 class="step__title mb-0">
                 <span class="step__counter"></span>
                 <span class="wrapper--copy">
                     <span id="oa_step_title_peer" class="step__label" aria-describedby="oa_step_status_peer oa_step_deadline_peer">{% trans "Assess Peers" %}</span>
@@ -94,7 +94,7 @@
 
                 <ul class="list list--actions">
                     <li class="list--actions__item">
-                        <button type="submit" class="peer-assessment--001__assessment__submit action action--submit" disabled>
+                        <button type="submit" class="peer-assessment--001__assessment__submit action action--submit btn-sm" disabled>
                             {{ submit_button_text }}
                         </button>
                     </li>

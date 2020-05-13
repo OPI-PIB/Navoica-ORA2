@@ -50,17 +50,17 @@
 
 %btn-pill {
   @extend %btn;
-  border-radius: ($baseline-v/5);
+//  border-radius: ($baseline-v/5);
 }
 
 %btn-rounded {
   @extend %btn;
-  border-radius: ($baseline-v/2);
+//  border-radius: ($baseline-v/2);
 }
 
 %btn-edged {
   @extend %btn;
-  border-radius: ($baseline-v/10);
+//  border-radius: ($baseline-v/10);
 }
 
 %btn-reset {
@@ -78,7 +78,7 @@
 %btn--primary {
   @extend %btn-pill;
   @extend %t-strong;
-  padding: ($baseline-v/2) ($baseline-h);
+//  padding: ($baseline-v/2) ($baseline-h);
   background: $action-primary-color;
   border: 1px solid $action-primary-color;
   color: $copy-inverse-color;
@@ -110,10 +110,10 @@
 %btn--secondary {
   @extend %btn-pill;
   @extend %t-strong;
-  padding: ($baseline-v/2) ($baseline-h);
+//  padding: ($baseline-v/2) ($baseline-h);
   background: $white;
-  border: 1px solid $uxpl-primary-dark;
-  color: $uxpl-primary-dark;
+  border: 1px solid $uxpl-primary-base;
+  color: $uxpl-primary-base;
 
   &:hover, &:active, &:focus {
     background: $action-primary-color;

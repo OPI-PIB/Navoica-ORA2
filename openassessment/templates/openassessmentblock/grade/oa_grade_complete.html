@@ -1,7 +1,7 @@
 {% load i18n %}
 {% spaceless %}
     <li id="openassessment__grade__{{ xblock_id }}" class="openassessment__steps__step step--grade is--complete is--showing has--grade ui-slidable__container {% if allow_latex %}allow--latex{% endif %}" tabindex="-1">
-        <header class="step__header ui-slidable__control">
+        <header class="step__header ui-slidable__control mt-0">
             <span>
                 <button class="ui-slidable" aria-expanded="true" id="oa_grade_{{ xblock_id }}" aria-controls="oa_grade_{{ xblock_id }}_content" aria-labeledby="oa_step_title_grade">
                     <span class="icon fa fa-caret-right" aria-hidden="false"/>
@@ -9,7 +9,7 @@
             </span>
 
             <span>
-                <h4 class="step__title">
+                <h4 class="step__title mb-0">
                     <span class="wrapper--copy">
                         {% if score %}
                             <span id="oa_step_title_grade" class="step__label">{% trans "Your Grade" %}: </span>
@@ -197,7 +197,7 @@
 
                                         <ul class="list list--actions submission__feedback__actions">
                                             <li class="list--actions__item">
-                                                <button type="submit" class="action action--submit feedback__submit">{% trans "Submit feedback on peer assessments" %}</button>
+                                                <button type="submit" class="action action--submit feedback__submit btn-sm">{% trans "Submit feedback on peer assessments" %}</button>
                                             </li>
                                         </ul>
                                     </div>

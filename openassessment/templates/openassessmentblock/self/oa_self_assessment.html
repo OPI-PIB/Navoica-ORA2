@@ -7,7 +7,7 @@
     tabindex="-1">
 {% endblock %}
 
-    <header class="step__header ui-slidable__control">
+    <header class="step__header ui-slidable__control mt-0">
         <span>
             {% block button %}
                 <button class="ui-slidable" aria-expanded="true" id="oa_self_{{ xblock_id }}" aria-controls="oa_self_{{ xblock_id }}_content" aria-labeledby="oa_step_title_self">
@@ -17,7 +17,7 @@
         </span>
 
         <span>
-            <h4 class="step__title">
+            <h4 class="step__title mb-0">
                 <span class="step__counter"></span>
                 <span class="wrapper--copy">
                     <span id="oa_step_title_self" class="step__label" aria-describedby="oa_step_status_self oa_step_deadline_self">{% trans "Assess Your Response" %}</span>
@@ -74,7 +74,7 @@
 
                 <ul class="list list--actions">
                     <li class="list--actions__item">
-                        <button type="submit" class="self-assessment--001__assessment__submit action action--submit" disabled>
+                        <button type="submit" class="self-assessment--001__assessment__submit action action--submit btn-sm" disabled>
                             {% trans "Submit your assessment" %}
                         </button>
                     </li>

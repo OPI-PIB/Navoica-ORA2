@@ -12,7 +12,7 @@ $edx-blue: rgb(58, 162, 224);
 $edx-blue-l1: tint($edx-blue,20%);
 
 
-$edx-pink: rgb(182,37,104);
+$edx-pink: #E41D37 !default;
 $edx-pink-d1: shade($edx-pink,20%);
 
 

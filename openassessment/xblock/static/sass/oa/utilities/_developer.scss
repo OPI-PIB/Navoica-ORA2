@@ -31,6 +31,7 @@
   width: 100%;
   overflow: auto;
   margin-top: $baseline-v;
+  margin-bottom: $baseline-v;
   padding-top: 20px;
 
   .wrapper--staff-toolbar {
@@ -51,10 +52,10 @@
 
       &.is--active {
         color: white;
-        background-color: $edx-pink;
+        background-color: $uxpl-primary-base;
 
         &:hover {
-          background-color: $edx-pink-d1;
+          background-color: action-primary-color-focus;
         }
       }
 
@@ -91,7 +92,7 @@
   }
 }
 
-.staff-info__student {
+.staff-info__student, .staff-info__title {
   .label {
     color: $heading-staff-color;
     margin-bottom: ($baseline-v/2);

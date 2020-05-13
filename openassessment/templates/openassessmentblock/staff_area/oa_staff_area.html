@@ -2,11 +2,11 @@
 {% load tz %}
 <div class="openassessment__staff-area wrapper--staff-area">
 
-    <div class="wrapper--staff-toolbar">
-        <button class="ui-staff__button button-staff-tools" aria-expanded="false" data-panel="openassessment__staff-tools">{% trans "Manage Individual Learners" %}</button>
-        <button class="ui-staff__button button-staff-info" aria-expanded="false" data-panel="openassessment__staff-info">{% trans "View Assignment Statistics" %}</button>
+    <div class="wrapper--staff-toolbar mb-0">
+        <button class="ui-staff__button button-staff-tools btn-sm" aria-expanded="false" data-panel="openassessment__staff-tools">{% trans "Manage Individual Learners" %}</button>
+        <button class="ui-staff__button button-staff-info btn-sm" aria-expanded="false" data-panel="openassessment__staff-info">{% trans "View Assignment Statistics" %}</button>
         {% if staff_assessment_required %}
-            <button class="ui-staff__button button-staff-grading" aria-expanded="false" data-panel="openassessment__staff-grading">{% trans "Grade Available Responses" %}</button>
+            <button class="ui-staff__button button-staff-grading btn-sm" aria-expanded="false" data-panel="openassessment__staff-grading">{% trans "Grade Available Responses" %}</button>
         {% endif %}
     </div>
 
@@ -14,7 +14,7 @@
         <div class="staff-info ui-staff">
             <button class="ui-staff_close_button ui-staff__title"><span class="sr">{% trans "Close" %}</span> <span class="icon fa fa-close" aria-hidden="true"></span></button>
             <h2 class="staff-info__title ui-staff__title">
-                <span class="staff-info__title__copy">{% trans "Manage Individual Learners" %}</span>
+                <span class="title staff-info__title__copy">{% trans "Manage Individual Learners" %}</span>
             </h2>
 
             <div class="staff-info__content ui-staff__content">
@@ -26,7 +26,7 @@
                             <label class="label">{% trans "Enter an individual learner's username or email" %}
                                 <input type="text" class="openassessment__student_username value" maxlength="255">
                             </label>
-                            <button class="action--submit action--submit-username"><span class="copy">{% trans "Submit" %}</span></button>
+                            <button class="action--submit action--submit-username btn-sm"><span class="copy">{% trans "Submit" %}</span></button>
                             <div class="student-form-error"></div>
                         </form>
                     </div>
@@ -40,9 +40,9 @@
     <div class="openassessment__staff-info wrapper--staff-info wrapper--ui-staff">
         <div class="staff-info ui-staff">
             <button class="ui-staff_close_button ui-staff__title"><span class="sr">{% trans "Close" %}</span> <span class="icon fa fa-close" aria-hidden="true"></span></button>
-            <h2 class="staff-info__title ui-staff__title">
+            <h4 class="staff-info__title ui-staff__title">
                 <span class="staff-info__title__copy">{% trans "View Assignment Statistics" %}</span>
-            </h2>
+            </h4>
 
             <div class="staff-info__content ui-staff__content">
 

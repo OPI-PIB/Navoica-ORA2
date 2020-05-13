@@ -6,10 +6,10 @@
     tabindex="-1">
 {% endblock %}
 
-<header class="step__header ui-slidable__control">
-    <h4 class="step__title">
+<header class="step__header ui-slidable__control mt-0">
+    <h4 class="step__title mb-0">
         {% block button %}
-        <button class="ui-slidable" aria-expanded="true" id="oa_training_{{ xblock_id }}" aria-controls="oa_training_{{ xblock_id }}_content" aria-describedby="oa_step_status oa_step_deadline">
+        <button class="ui-slidable btn-sm" aria-expanded="true" id="oa_training_{{ xblock_id }}" aria-controls="oa_training_{{ xblock_id }}_content" aria-describedby="oa_step_status oa_step_deadline">
         {% endblock %}
         <span class="step__counter"></span>
             <span class="wrapper--copy">
@@ -145,7 +145,7 @@
 
                 <ul class="list list--actions">
                     <li class="list--actions__item">
-                        <button type="submit" class="student-training--001__assessment__submit action action--submit" disabled>
+                        <button type="submit" class="student-training--001__assessment__submit action action--submit btn-sm" disabled>
                             {% trans "Compare your selections with the instructor's selections" %}
                         </button>
                     </li>

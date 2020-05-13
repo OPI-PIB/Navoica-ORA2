@@ -33,7 +33,7 @@
 
     // STATE: focus
     &:focus {
-      box-shadow: 0 0 6px 0 rgba(29,157,217,0.4),inset 0 0 4px 0 rgba(0,0,0,0.15);
+      box-shadow: 0 0 0 0.2rem #dee2e6;
       border-color: $selected-color;
     }
   }

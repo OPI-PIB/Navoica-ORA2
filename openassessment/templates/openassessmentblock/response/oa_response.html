@@ -6,7 +6,7 @@
     tabindex="-1">
 {% endblock %}
 
-    <header class="step__header ui-slidable__control">
+    <header class="step__header ui-slidable__control mt-0">
         <span>
             {% block button %}
                 <button class="ui-slidable" aria-expanded="true" id="oa_response_{{ xblock_id }}" aria-controls="oa_response_{{ xblock_id }}_content" aria-labeledby="oa_step_title_response">
@@ -16,7 +16,7 @@
         </span>
 
         <span>
-            <h4 class="step__title">
+            <h4 class="step__title mb-0">
                 <span class="step__counter"></span>
                 <span class="wrapper--copy">
                     <span id="oa_step_title_response" class="step__label" aria-describedby="oa_step_status_response oa_step_deadline_response">{% trans "Your Response" %}</span>
@@ -121,7 +121,7 @@
 
                                 <ul class="list list--actions">
                                     <li class="list--actions__item">
-                                        <button type="submit" class="action action--save submission__save" aria-describedby="response__save_status__{{ xblock_id }}" disabled>
+                                        <button type="submit" class="action action--save submission__save btn-sm" aria-describedby="response__save_status__{{ xblock_id }}" disabled>
                                             {% trans "Save your progress" %}
                                         </button>
 
@@ -144,7 +144,7 @@
                             </div>
                             <label class="sr" for="submission_answer_upload_{{ xblock_id }}">{% trans "Select a file to upload for this submission." %}</label>
                             <input type="file" class="submission__answer__upload file--upload" id="submission_answer_upload_{{ xblock_id }}" multiple="">
-                            <button type="submit" class="file__upload action action--upload" disabled>{% trans "Upload files" %}</button>
+                            <button type="submit" class="file__upload action action--upload btn-sm" disabled>{% trans "Upload files" %}</button>
                             <div class="files__descriptions"></div>
                         </li>
                         {% endif %}
@@ -166,7 +166,7 @@
 
                 <ul class="list list--actions">
                     <li class="list--actions__item">
-                        <button type="submit" class="action action--submit step--response__submit"
+                        <button type="submit" class="action action--submit step--response__submit btn-sm"
                                 text_response="{{text_response}}"
                                 file_upload_response="{{file_upload_response}}"
                                 {{submit_enabled|yesno:",disabled" }}>
