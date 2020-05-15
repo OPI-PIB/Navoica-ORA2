@@ -16,7 +16,7 @@
     border: 1px solid shade($color-decorative-staff, 25%);
     border-top: ($baseline-v/4) solid $color-decorative-staff;
     padding: $baseline-v ($baseline-h/2);
-    background: $staff-bg;
+    background: $bg-content;
     display: none;
   }
 
@@ -29,7 +29,7 @@
 
   .ui-staff__title {
     @extend %t-heading;
-    color: $heading-staff-color;
+    color: $black-t;
   }
 
   .ui-staff__subtitle {
@@ -219,6 +219,7 @@
 
     .staff__grade__control {
       border-top: ($baseline-v/4) solid $color-decorative-tertiary;
+      border: ($baseline-v/20) solid $color-decorative-tertiary;
       background: $bg-content;
       background-color: $bg-content;
 

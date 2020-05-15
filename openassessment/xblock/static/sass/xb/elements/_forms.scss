@@ -112,7 +112,7 @@
       &:checked {
 
         + .option__label {
-          color: $selected-color;
+          color: $copy-color;
         }
       }
     }

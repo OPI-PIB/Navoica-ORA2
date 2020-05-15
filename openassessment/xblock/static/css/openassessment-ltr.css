@@ -753,7 +753,7 @@ hr.divider,
   margin-right: 10px;
 }
 .wrapper--xblock .field--radio .option__input:checked + .option__label, .wrapper--xblock .field--checkbox .option__input:checked + .option__label {
-  color: #E41D37;
+  color: #414141;
 }
 
 .wrapper--xblock .message {
@@ -1673,18 +1673,18 @@ hr.divider,
   border: 1px solid #ab1629;
   border-top: 5px solid #E41D37;
   padding: 20px 20px;
-  background: #212329;
+  background: white;
   display: none;
 }
 .openassessment .ui-staff .ui-slidable__content {
   padding: 10px 10px;
 }
 .openassessment .ui-staff__title {
-  color: white;
+  color: black;
 }
 .openassessment .ui-staff__subtitle {
   font-size: 16px;
-  color: white !important;
+  color: black !important;
   margin-bottom: 10px;
 }
 .openassessment .ui-staff__subtitle span {
@@ -1692,7 +1692,7 @@ hr.divider,
 }
 .openassessment .ui-staff__content {
   margin-top: 20px;
-  color: white;
+  color: black;
 }
 .openassessment .ui-staff__content__section {
   padding-bottom: 10px;
@@ -1706,7 +1706,7 @@ hr.divider,
 .openassessment .staff-info__summary .label, .openassessment .staff-info__summary .value {
   display: inline-block;
   vertical-align: center;
-  color: white;
+  color: black;
 }
 .openassessment .staff-info__summary .label {
   margin-right: 10px;
@@ -1727,17 +1727,17 @@ hr.divider,
 }
 .openassessment .staff-info__status__table .title, .openassessment .staff-info__classifierset__table .title {
   text-align: left;
-  color: white;
+  color: black;
   margin-bottom: 10px;
 }
 .openassessment .staff-info__status__table .label, .openassessment .staff-info__classifierset__table .label {
-  color: white;
+  color: black;
 }
 .openassessment .staff-info__status__table .value, .openassessment .staff-info__classifierset__table .value {
-  color: white;
+  color: black;
 }
 .openassessment .staff-info__status__table th, .openassessment .staff-info__status__table td, .openassessment .staff-info__classifierset__table th, .openassessment .staff-info__classifierset__table td {
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(0, 0, 0, 0.25);
   padding: 10px 10px;
 }
 .openassessment .staff-info__status__table th, .openassessment .staff-info__status__table td[scope], .openassessment .staff-info__classifierset__table th, .openassessment .staff-info__classifierset__table td[scope] {
@@ -1780,6 +1780,7 @@ hr.divider,
 }
 .openassessment .ui-staff .staff__grade__control {
   border-top: 5px solid #d9d9d9;
+  border: 1px solid #d9d9d9;
   background: white;
   background-color: white;
 }
@@ -2272,12 +2273,6 @@ hr.divider,
   background: none;
   border: none;
   box-shadow: none;
-}
-.openassessment .ui-slidable__container .ui-slidable:not([disabled]) {
-  color: #008B46;
-}
-.openassessment .ui-slidable__container .ui-slidable:not([disabled]):hover, .openassessment .ui-slidable__container .ui-slidable:not([disabled]):focus {
-  color: #008B46;
 }
 .openassessment .ui-slidable__container .ui-slidable .wrapper--copy {
   text-align: left;
@@ -2886,7 +2881,7 @@ hr.divider,
   padding: 0;
   border: 0;
   float: right;
-  background-color: #212329;
+  background-color: white;
   font-size: 12px;
   -webkit-appearance: none;
   background-image: none;
@@ -2900,7 +2895,7 @@ hr.divider,
 }
 
 .staff-info__student .label, .staff-info__title .label {
-  color: white;
+  color: black;
   margin-bottom: 10px;
 }
 .staff-info__student .label input, .staff-info__title .label input {
@@ -2909,16 +2904,16 @@ hr.divider,
   padding-bottom: 0;
 }
 .staff-info__student .title, .staff-info__title .title {
-  color: white;
+  color: black;
   margin-bottom: 10px;
 }
 .staff-info__student .title--sub, .staff-info__title .title--sub {
-  color: white;
+  color: black;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 .staff-info__student .student__answer__display__content, .staff-info__title .student__answer__display__content {
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(0, 0, 0, 0.25);
   padding: 10px 10px;
   margin-bottom: 10px;
 }
@@ -2927,7 +2922,7 @@ hr.divider,
 }
 .staff-info__student .staff-info__student__report .title, .staff-info__title .staff-info__student__report .title {
   margin-top: 10px;
-  border-top: 1px solid white;
+  border-top: 1px solid black;
   padding: 10px 20px 10px 0;
 }
 .staff-info__student .staff-info__student__report .title span, .staff-info__title .staff-info__student__report .title span {
@@ -3207,11 +3202,11 @@ hr.divider,
   border-color: #009fe6;
 }
 #openassessment-editor .openassessment_assessment_module_settings_editor:hover {
-  border-color: #80a9cc;
+  border-color: #B43F37;
 }
 #openassessment-editor .openassessment_assessment_module_settings_editor:hover .drag-handle {
-  background-color: #009fe6;
-  border-color: #009fe6;
+  background-color: #B43F37;
+  border-color: #B43F37;
   -webkit-transition: none;
   -moz-transition: none;
   transition: none;
@@ -3308,7 +3303,7 @@ hr.divider,
   border: 1px solid;
   border-radius: 4px;
   text-align: center;
-  color: #009fe6;
+  color: #B43F37;
   padding: 10px;
   margin: 15px 10px;
 }
@@ -3327,7 +3322,7 @@ hr.divider,
 }
 #openassessment-editor .openassessment_container_add_button:hover {
   color: white;
-  background-color: #009fe6;
+  background-color: #B43F37;
   cursor: pointer;
 }
 #openassessment-editor .openassessment_container_remove_button.is--disabled, #openassessment-editor #oa_rubric_editor_wrapper .openassessment_criterion_option .openassessment_option_header .is--disabled.openassessment_option_header_remove, #openassessment-editor #oa_rubric_editor_wrapper .openassessment_criterion_option .is--disabled.openassessment_criterion_option_remove_button,
@@ -3366,7 +3361,7 @@ hr.divider,
 #openassessment-editor #oa_rubric_editor_wrapper .openassessment_criterion .openassessment_criterion_add_option {
   text-align: center;
   border: 1px solid;
-  color: #009fe6;
+  color: #B43F37;
   background-color: white;
   padding: 7.5px;
   margin: 10px 10px 10px 20px;
@@ -3384,7 +3379,7 @@ hr.divider,
   margin: 0 5px;
 }
 #openassessment-editor #oa_rubric_editor_wrapper .openassessment_criterion .openassessment_criterion_add_option:hover {
-  background-color: #009fe6;
+  background-color: #B43F37;
   color: white;
 }
 #openassessment-editor #oa_rubric_editor_wrapper .openassessment_criterion .openassessment_criterion_basic_editor .comp-setting-entry {
@@ -3657,7 +3652,7 @@ hr.divider,
   float: right;
 }
 #student_training_settings_editor .openassessment_add_training_example {
-  color: #009fe6;
+  color: #B43F37;
   text-align: center;
   padding: 5px;
   border: 1px solid;
@@ -3666,7 +3661,7 @@ hr.divider,
 }
 #student_training_settings_editor .openassessment_add_training_example:hover {
   color: white;
-  background-color: #009fe6;
+  background-color: #B43F37;
   cursor: pointer;
 }
 #student_training_settings_editor .openassessment_add_training_example:before {
@@ -3690,7 +3685,7 @@ hr.divider,
   box-shadow: none;
 }
 .step--response .file--upload {
-  margin: 20px 10px;
+  margin: 10px 0;
 }
 
 .self-assessment__display__header .self-assessment__display__title,

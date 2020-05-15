@@ -74,7 +74,7 @@
       padding: 0;
       border: 0;
       float: right;
-      background-color: $staff-bg;
+      background-color: $bg-content;
 
       // Remove button styling
       font-size: 12px;
@@ -475,10 +475,10 @@
   }
 
   .openassessment_assessment_module_settings_editor:hover {
-    border-color: $blue;
+    border-color: #B43F37;
     .drag-handle {
-      background-color: #009fe6;
-      border-color: #009fe6;
+      background-color: #B43F37;
+      border-color: #B43F37;
       @include transition(none);
     }
   }
@@ -597,7 +597,7 @@
     border: 1px solid;
     border-radius: 4px;
     text-align: center;
-    color: #009fe6;
+    color: #B43F37;
     padding: 10px;
     margin: 15px 10px;
   }
@@ -609,7 +609,7 @@
 
   .openassessment_container_add_button:hover {
     color: white;
-    background-color: #009fe6;
+    background-color: #B43F37;
     cursor: pointer;
   }
 
@@ -665,7 +665,7 @@
         }
         @include text-align(center);
         border: 1px solid;
-        color: #009fe6;
+        color: #B43F37;
         background-color: white;
         padding: 7.5px;
         @include margin(10px, 10px, 10px, 20px);
@@ -674,7 +674,7 @@
       }
 
       .openassessment_criterion_add_option:hover{
-        background-color: #009fe6;
+        background-color: #B43F37;
         color: white;
       }
 
@@ -1010,7 +1010,7 @@
   }
 
   .openassessment_add_training_example {
-    color: #009fe6;
+    color: #B43F37;
     @include text-align(center);
     padding: 5px;
     border: 1px solid;
@@ -1020,7 +1020,7 @@
 
   .openassessment_add_training_example:hover {
     color: white;
-    background-color: #009fe6;
+    background-color: #B43F37;
     cursor: pointer;
   }
 
@@ -1057,7 +1057,7 @@
   }
 
   .file--upload {
-    margin: $baseline-v ($baseline-v/2);
+    margin: ($baseline-v/2) 0;
   }
 }
 .self-assessment__display__header

@@ -648,13 +648,13 @@ OpenAssessment.ResponseView.prototype = {
 
             divLabel = $('<div/>');
             divLabel.addClass('submission__file__description__label');
-            divLabel.text(gettext('Describe ') + files[i].name + ' ' + gettext('(required):'));
+            divLabel.text(gettext('Describe ')+ ' ' + files[i].name + ' ' + gettext('(required):'));
             divLabel.appendTo(mainDiv);
 
             divTextarea = $('<div/>');
             divTextarea.addClass('submission__file__description');
             textarea = $('<textarea />', {
-                'aria-label': gettext('Describe ') + files[i].name,
+                'aria-label': gettext('Describe ') + ' '+ files[i].name,
             });
             if ((this.filesDescriptions.indexOf(i) !== -1) && (this.filesDescriptions[i] !== '')) {
                 textarea.val(this.filesDescriptions[i]);

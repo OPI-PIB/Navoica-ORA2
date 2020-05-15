@@ -497,11 +497,11 @@
       }
 
       &:not([disabled]) {
-        color: $color-complete;
+      //  color: $color-complete;
 
-        &:hover, &:focus {
-          color: $color-complete;
-        }
+      //  &:hover, &:focus {
+      //    color: $color-complete;
+      //  }
       }
 
       .wrapper--copy {
