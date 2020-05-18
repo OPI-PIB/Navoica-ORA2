@@ -1467,7 +1467,7 @@ hr.divider,
   margin-right: 10px;
 }
 .step--student-training .student-training__assessment .question__answers .wrapper--input .answer__value:checked + .answer__label, .openassessment .step--self-assessment .self-assessment__assessment .question__answers .wrapper--input .answer__value:checked + .answer__label, .openassessment .step--peer-assessment .peer-assessment__assessment .question__answers .wrapper--input .answer__value:checked + .answer__label, .openassessment .staff-assessment__assessment .question__answers .wrapper--input .answer__value:checked + .answer__label {
-  color: #E41D37;
+  color: #414141;
 }
 .step--student-training .student-training__assessment .question__answers .wrapper--metadata, .openassessment .step--self-assessment .self-assessment__assessment .question__answers .wrapper--metadata, .openassessment .step--peer-assessment .peer-assessment__assessment .question__answers .wrapper--metadata, .openassessment .staff-assessment__assessment .question__answers .wrapper--metadata {
   display: block;

@@ -268,7 +268,7 @@
       &:checked {
 
         + .answer__label {
-          color: $selected-color;
+          color: $copy-color;
         }
       }
     }
