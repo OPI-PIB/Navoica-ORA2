@@ -716,7 +716,6 @@ hr.divider,
 .wrapper--xblock input[type=password]:focus,
 .wrapper--xblock textarea:focus {
   box-shadow: 0 0 0 0.2rem #dee2e6;
-  border-color: #E41D37;
 }
 .wrapper--xblock .field {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
