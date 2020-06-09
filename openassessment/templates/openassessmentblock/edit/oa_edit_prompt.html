@@ -1,5 +1,10 @@
 {% load i18n %}
 {% spaceless %}
+<script>
+    tinyMCE.suffix = ".min";
+    tinyMCE.baseURL = window.baseUrl + "js/vendor/tinymce/js/tinymce";
+    tinyMCE.skin = 'lightgray';
+</script>
 <li class="openassessment_prompt" data-prompt="{{ prompt_uuid }}">
 
     <div class="openassessment_container_header openassessment_prompt_header view-outline">
