@@ -1,12 +1,12 @@
 {% load i18n %}
 {% spaceless %}
-<script>
-    tinyMCE.suffix = ".min";
-    tinyMCE.baseURL = window.baseUrl + "js/vendor/tinymce/js/tinymce";
-    tinyMCE.skin = 'lightgray';
-</script>
-<li class="openassessment_prompt" data-prompt="{{ prompt_uuid }}">
 
+<li class="openassessment_prompt" data-prompt="{{ prompt_uuid }}">
+    <script>
+        tinyMCE.suffix = ".min";
+        tinyMCE.baseURL = window.baseUrl + "js/vendor/tinymce/js/tinymce";
+        tinyMCE.skin = 'lightgray';
+    </script>
     <div class="openassessment_container_header openassessment_prompt_header view-outline">
         <div class="openassessment_container_header_title_box openassessment_prompt_header_title_box">
             <h6 class="openassessment_container_header_title openassessment_prompt_header_title">{% trans "Prompt" %}</h6>
@@ -25,7 +25,6 @@
                 </div>
             </li>
         </ul>
-
     </div>
 </li>
 {% endspaceless %}
