@@ -35,7 +35,7 @@ class SubmissionMixin(object):
 
     ALLOWED_IMAGE_MIME_TYPES = ['image/gif', 'image/jpeg', 'image/pjpeg', 'image/png']
 
-    ALLOWED_FILE_MIME_TYPES = ['application/pdf'] + ALLOWED_IMAGE_MIME_TYPES
+    ALLOWED_FILE_MIME_TYPES = ['application/pdf', 'application/zip'] + ALLOWED_IMAGE_MIME_TYPES
 
     MAX_FILES_COUNT = 20
 
