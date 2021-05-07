@@ -9,7 +9,7 @@
     "moment": "^2.15.1",
     "moment-timezone": "~0.5.5",
     "requirejs": "~2.3.2",
-    "underscore": "^1.8.2"
+    "underscore": "^1.12.1"
   },
   "devDependencies": {
     "eslint": "^6.3.0",
